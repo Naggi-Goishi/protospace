@@ -3,43 +3,63 @@
 ##Users
 * name
 * avatar
-* self_introduction
+* profile
 * job
+* member
 
 ##Projects
 * catch_copy
 * concept
 * title
+* user_id
+* like_id
 
-##Projects_images
+##Project_images
 * image
-* user
-* projects
+
 
 ##Tags
 * name
+* project_id
 
 ##Comments
 * text
+* user_id
+* project_id
 
 ##likes
 * user_id
 * project_id
 
+##projects_tags
+* project_id
+* tag_id
+
+
 ##Relation
+###user and projects one vs. many
 * user has_many projects
-* user has_many likes
-* user has_many projects_images
 * project belongs_to user
-* project has_many tags
-* project has_many comments
+
+###user and likes one vs. many
+* no description
+
+###projecrt and likes one vs. many
 * project has_many likes
-* project has_many projects_images
-* tag has_many projects
-* tag has_many users
-* comment belongs_to user
-* comment belongs_to project
-* like belongs_to user
 * like belongs_to project
-* projects_image belongs_to user
-* projects_image belongs_to projects
+
+###projects and tags many vs. many
+* projects has_many tags through projects_tags
+* tags has_mant tags through projects_tags
+
+###user and comments one vs. many
+* user has_many comments
+* comment belong_to user
+
+###project and comments one vs. many
+* project has_many comments
+* comment belongs_to project
+
+###project has_many project_images one vs. many
+* project has_many project_images
+* project_image belongs_to project
