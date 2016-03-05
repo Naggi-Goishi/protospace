@@ -12,7 +12,6 @@
 * concept
 * title
 * user_id
-* like_id
 
 ##Project_images
 * image
@@ -20,7 +19,6 @@
 
 ##Tags
 * name
-* project_id
 
 ##Comments
 * text
@@ -36,7 +34,7 @@
 * tag_id
 
 
-##Relation
+##Relation 1
 ###user and projects one vs. many
 * user has_many projects
 * project belongs_to user
@@ -63,3 +61,21 @@
 ###project has_many project_images one vs. many
 * project has_many project_images
 * project_image belongs_to project
+
+##Relation 2
+###User
+* user has_many projects
+* user has_many comments
+###Project
+* project belongs_to user
+* project has_many likes
+* projects has_many tags through projects_tags
+* project has_many comments
+* project has_many project_images
+* project_image belongs_to project
+###Like
+* like belongs_to project
+###Tag
+* tags has_mant tags through projects_tags
+
+
