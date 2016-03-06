@@ -33,49 +33,21 @@
 * project_id
 * tag_id
 
-
-##Relation 1
-###user and projects one vs. many
-* user has_many projects
-* project belongs_to user
-
-###user and likes one vs. many
-* no description
-
-###projecrt and likes one vs. many
-* project has_many likes
-* like belongs_to project
-
-###projects and tags many vs. many
-* projects has_many tags through projects_tags
-* tags has_mant tags through projects_tags
-
-###user and comments one vs. many
-* user has_many comments
-* comment belong_to user
-
-###project and comments one vs. many
-* project has_many comments
-* comment belongs_to project
-
-###project has_many project_images one vs. many
-* project has_many project_images
-* project_image belongs_to project
-
-##Relation 2
+##Relation
 ###User
 * user has_many projects
 * user has_many comments
+* user has_many likes
 ###Project
 * project belongs_to user
 * project has_many likes
-* projects has_many tags through projects_tags
+* project has_many tags through projects_tags
 * project has_many comments
 * project has_many project_images
+###Project_images
 * project_image belongs_to project
 ###Like
 * like belongs_to project
-###Tag
-* tags has_mant tags through projects_tags
-
-
+* like belongs_to user
+###Tags
+* tags has_many tags through projects_tags
