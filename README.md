@@ -15,6 +15,7 @@
 
 ##Project_images
 * image
+* status
 
 
 ##Tags
@@ -50,4 +51,4 @@
 * like belongs_to project
 * like belongs_to user
 ###Tags
-* tags has_many tags through projects_tags
+* tag has_many projects through projects_tags
