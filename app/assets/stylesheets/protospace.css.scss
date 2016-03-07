@@ -9,7 +9,7 @@ body {
   font-size: 14px;
   line-height: 1.4;
   color: #212121;
-  
+
   overflow-x: hidden;
 
   text-rendering: optimizeLegibility;
@@ -41,14 +41,14 @@ body {
   border: 0;
   border-radius: 2px;
 
-  transition: all .15s ease-in-out; 
-  -o-transition: all .15s ease-in-out; 
-  -moz-transition: all .15s ease-in-out; 
-  -webkit-transition: all .15s ease-in-out;  
-  
+  transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  -moz-transition: all .15s ease-in-out;
+  -webkit-transition: all .15s ease-in-out;
+
   &:focus, &:active, &.active, &:active:focus, &.active:focus {
     outline: 0;
-    outline-offset: 0;  
+    outline-offset: 0;
     box-shadow: none;
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
@@ -88,7 +88,7 @@ body {
   width: 56px;
   height: 56px;
   min-width: 56px;
-  
+
   span {
     line-height: 56px;
   }
@@ -98,7 +98,7 @@ body {
   width: 78px;
   height: 78px;
   min-width: 78px;
-  
+
   span {
     line-height: 78px;
   }
@@ -108,7 +108,7 @@ body {
   width: 40px;
   height: 40px;
   min-width: 40px;
-  
+
   span {
     line-height: 40px;
   }
@@ -118,7 +118,7 @@ body {
   width: 30px;
   height: 30px; 
   min-width: 30px;
-  
+
   span {
     line-height: 30px;
   }
@@ -162,7 +162,7 @@ body {
   position: absolute;
   pointer-events: none;
   border-radius: 50%;
-  
+
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
   -ms-transform: scale(0);
@@ -219,7 +219,7 @@ body {
 
 .btn-default {
   border: 1px solid #eee;
-  &:hover {  
+  &:hover {
     border: 1px solid #eee;
     background: #eee;
   }
@@ -229,17 +229,17 @@ body {
   background-image: linear-gradient(-180deg, #67ABFA 0%, #4A8DDC 100%);
   border: 1px solid #4A8EDD;
   border-radius: 3px;
-  
+
   &:hover {
     border: 1px solid #4A8EDD;
     opacity: 0.9;
   }
 }
 
-input[type="email"], 
-input[type="text"], 
-input[type="password"], 
-textarea, 
+input[type="email"],
+input[type="text"],
+input[type="password"],
+textarea,
 select {
   outline: none;
 }
@@ -256,14 +256,14 @@ body {
 .navbar-default {
   background-color: #fff;
   padding: 20px 0;
-  
+
   .navbar-brand {
     padding: 8px 0 0;
   }
-  
+
   .btn a {
     color: #fff;
-    
+
     &:hover {
       text-decoration: none;
     }
@@ -293,26 +293,26 @@ body {
     border-radius: 0;
     padding: 0;
   }
-  
+
   h3 {
     margin: 0;
     font-size: 1.6rem;
   }
-  
+
   .proto-meta {
     overflow: hidden;
     font-size: 1.2rem;
     padding: 10px 0;
-    
+
     .proto-user {
       float: left;
     }
-    
+
     .proto-posted {
       float: right;
     }
   }
-  
+
   .btn {
     font-size: 1rem;
     padding: 5px;
@@ -324,7 +324,7 @@ body {
 .proto-page {
   .user-nav {
     padding: 50px 0;
-    
+
     .media-object {
       border-radius: 50%;
     }
