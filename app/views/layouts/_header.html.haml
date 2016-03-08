@@ -11,7 +11,7 @@
       %ul.nav.navbar-nav.navbar-right
         %li
           .btn.btn-primary.navbar-btn
-            %a{:href => "/login"}
+            %a{:href => new_user_session_path}
               Get Started
       //login
       %ul.nav.navbar-nav.navbar-right
@@ -26,5 +26,5 @@
               %a{:href => "#"} Logout
         %li
           .btn.btn-primary.navbar-btn
-            %a{:href => "/proto/new"}
+            %a{:href => new_project_path}
               New Proto
