@@ -1,4 +1,4 @@
-class ProtoController < ApplicationController
+class ProjectController < ApplicationController
   def index
   end
 
