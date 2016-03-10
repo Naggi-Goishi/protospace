@@ -48,6 +48,4 @@ group :development do
   gem 'spring'
 end
 
-gem 'devise'
 gem 'bootstrap-sass'
-gem "paperclip"
