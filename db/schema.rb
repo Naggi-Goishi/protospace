@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160310083002) do
+ActiveRecord::Schema.define(version: 20160310115649) do
 
   create_table "installs", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -48,6 +48,10 @@ ActiveRecord::Schema.define(version: 20160310083002) do
     t.string   "profile",                limit: 255
     t.string   "job",                    limit: 255
     t.string   "member",                 limit: 255
+    t.string   "avator_file_name",       limit: 255
+    t.string   "avator_content_type",    limit: 255
+    t.integer  "avator_file_size",       limit: 4
+    t.datetime "avator_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
