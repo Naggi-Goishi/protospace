@@ -1,7 +1,4 @@
-class ProjectController < ApplicationController
-
-  def index
-  end
+class ProjectsController < ApplicationController
 
   def new
   end
