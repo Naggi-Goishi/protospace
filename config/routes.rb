@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-  root 'top#index'
+
+  devise_for :user
+  root 'projects#index'
+  resources :projects, only: [:show, :index, :new]
+
 end

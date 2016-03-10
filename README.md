@@ -16,6 +16,7 @@
 ##Project_images
 * image
 * status
+* project_id
 
 
 ##Tags
