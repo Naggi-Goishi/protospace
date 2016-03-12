@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
   gem 'html2haml', '< 2.0.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'pry-rails'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -51,3 +52,4 @@ end
 gem "devise"
 gem 'bootstrap-sass'
 gem 'carrierwave'
+gem 'pry-doc'
