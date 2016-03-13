@@ -36,20 +36,25 @@
 * tag_id
 
 ##Relation
-###User
+
+### User
 * user has_many projects
 * user has_many comments
 * user has_many likes
-###Project
+
+### Project
 * project belongs_to user
 * project has_many likes
 * project has_many tags through projects_tags
 * project has_many comments
 * project has_many project_images
-###Project_images
+
+### Project_images
 * project_image belongs_to project
-###Like
+
+### Like
 * like belongs_to project
 * like belongs_to user
-###Tags
+
+### Tags
 * tag has_many projects through projects_tags
