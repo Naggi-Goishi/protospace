@@ -10,14 +10,14 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    Project.create(create_params)
+    current_user.projects.create(create_params)
     redirect_to projects_path
   end
 
 private
 
   def create_params
-    params.require(:project).permit(:title, :catch_copy, :concept, project_images_attributes: [:id, :image]).merge(user_id: current_user.id)
+    params.require(:project).permit(:title, :catch_copy, :concept, project_images_attributes: [:id, :image])
   end
 
 end
