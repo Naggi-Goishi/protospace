@@ -1,16 +1,13 @@
-- @projects.each do |project|
-  .container.proto-list
-    .row
-      .col-sm-4.col-md-3.proto-content
-        .thumbnail
-          = link_to  '#' do
-            = image_tag(project.project_images.main.first.image)
+.container.proto-list
+  .row
+    .col-sm-4.col-md-3.proto-content
+      .thumbnail
+        = link_to image_tag("sample.png"), ''
           .caption
-            %h3
-              = project.title
+            %h3 Salvation Army on iPad App Wireframe
             .proto-meta
               .proto-user
-                = link_to "by #{project.user.name}", '#'
+                = link_to "by user", '#'
               .proto-posted
                 Apr 26
             %ul.proto-tag-list.list-inline
