@@ -4,23 +4,26 @@
       .col-md-12
         = f.text_area :title, placeholder: "Title", class: "proto-new-title"
       .row
-        = f.fields_for :project_images do |i|
-          .col-md-12
+        .col-md-12
+          = f.fields_for :project_images do |i|
             .cover-image-upload
               = i.file_field :image
-          .col-md-12
-            %ul.proto-sub-list.list-group
-            = f.fields_for :project_images do |j|
-              %li.list-group-item.col-md-4
-                .image-upload
-                  = j.file_field :image
-            = f.fields_for :project_images do |f|
-              %li.list-group-item.col-md-4
-                .image-upload
-                  = f.file_field :image
+              = i.hidden_field :status, value: "main"
+        .col-md-12
+          %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
-              .image-upload-plus
-                %span +
+              = f.fields_for :project_images do |i|
+                .image-upload
+                  = i.file_field :image
+                  = i.hidden_field :status, value: "sub"
+            %li.list-group-item.col-md-4
+              = f.fields_for :project_images do |i|
+                .image-upload
+                  = i.file_field :image
+                  = i.hidden_field :status, value: "sub"
+          %li.list-group-item.col-md-4
+            .image-upload-plus
+              %span +
     .row.proto-description
       .col-md-12
         = f.text_area :catch_copy, placeholder: "Catch Copy"

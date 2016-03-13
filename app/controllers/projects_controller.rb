@@ -17,7 +17,7 @@ class ProjectsController < ApplicationController
 private
 
   def create_params
-    params.require(:project).permit(:title, :catch_copy, :concept, project_images_attributes: [:id, :image])
+    params.require(:project).permit(:title, :catch_copy, :concept, project_images_attributes: [:id, :image, :status])
   end
 
 end
