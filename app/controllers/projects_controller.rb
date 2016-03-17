@@ -17,6 +17,26 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def destroy
+    project = Project.find(params[:id])
+    if project.user_id == current_user.id
+      project.destroy
+    end
+    redirect_to :root
+  end
+
+  def edit
+    @project = Project.find(params[:id])
+  end
+
+  def update
+    project = Project.find(params[:id])
+    if project.user_id == current_user.id
+      project.update(create_params)
+    end
+    redirect_to :root
+  end
+
 private
 
   def create_params
