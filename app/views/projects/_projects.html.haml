@@ -4,14 +4,13 @@
       .col-sm-4.col-md-3.proto-content
         .thumbnail
           .dropdown.drop_menu_location
-            -if user_signed_in?
-              - if current_user.id == project.user_id
-                %button.btn.btn-default.dropdown-toggle action
-                %ul.dropdown-menu, aria: {labelledby: "dropdownMenu1"}
-                %li
-                  = link_to 'Delete', "projects/#{project.id}", method: :delete
-                %li
-                  = link_to 'Edit', "projects/#{project.id}/edit"
+            - if current_user.id == project.user_id && user_signed_in?
+              %button.btn.btn-default.dropdown-toggle action
+              %ul.dropdown-menu, aria: {labelledby: "dropdownMenu1"}
+              %li
+                = link_to 'Delete', project_path(project.id), method: :delete
+              %li
+                = link_to 'Edit', edit_project_path(project.id)
           = link_to  '#' do
             = image_tag(project.project_images.main.first.image)
           .caption
