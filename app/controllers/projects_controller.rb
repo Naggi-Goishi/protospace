@@ -1,7 +1,11 @@
 class ProjectsController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index]
+  before_action :find_project, only: [:show, :destroy, :edit, :update]
   def index
     @projects = Project.all
+  end
+
+  def show
   end
 
   def new
@@ -19,12 +23,11 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    project = Project.find(params[:id])
+    @project.destroy
     redirect_to :root
   end
 
   def edit
-    @project = Project.find(params[:id])
     unless current_user.id == @project.user_id
       redirect_to :root
     else
@@ -32,15 +35,18 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    project = Project.find(params[:id])
-    project.save
+    @project.update(project_params)
     redirect_to :root
   end
 
 private
 
-  def create_params
+  def project_params
     params.require(:project).permit(:title, :catch_copy, :concept, project_images_attributes: [:id, :image, :status]).merge(user_id: current_user.id)
+  end
+
+  def find_project
+    @project = Project.find(params[:id])
   end
 
 end
