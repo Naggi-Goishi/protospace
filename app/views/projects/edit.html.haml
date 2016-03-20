@@ -1,7 +1,11 @@
 = form_for @project, html: {class: "container proto-new"} do |f|
   .col-md-8.col-md-offset-2
     %header.row.user-nav.row
-      = render 'projects/erromsg'
+      - if @project.errors.any?
+        .alert.alert-danger
+          %ul
+            - @project.errors.full_messages.each do |msg|
+              %li= msg
       .col-md-12
         = f.text_area :title, placeholder: "Title", class: "proto-new-title"
       .row
