@@ -1,23 +1,28 @@
 = form_for @project, html: {class: "container proto-new"} do |f|
   .col-md-8.col-md-offset-2
     %header.row.user-nav.row
+      - if @project.errors.any?
+        .alert.alert-danger
+          %ul
+            - @project.errors.full_messages.each do |msg|
+              %li= msg
       .col-md-12
         = f.text_area :title, placeholder: "Title", class: "proto-new-title"
       .row
         .col-md-12
-          = f.fields_for 'project_images_attributes[0]' do |i|
+          = f.fields_for :project_images, @project.project_images.main.first do |i|
             .cover-image-upload
               = i.file_field :image
               = i.hidden_field :status, value: "main"
         .col-md-12
           %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
-              = f.fields_for 'project_images_attributes[1]' do |i|
+              = f.fields_for :project_images, @project.project_images.sub.first do |i|
                 .image-upload
                   = i.file_field :image
                   = i.hidden_field :status, value: "sub"
             %li.list-group-item.col-md-4
-              = f.fields_for 'project_images_attributes[2]'  do |i|
+              = f.fields_for :project_images, @project.project_images.sub.second  do |i|
                 .image-upload
                   = i.file_field :image
                   = i.hidden_field :status, value: "sub"

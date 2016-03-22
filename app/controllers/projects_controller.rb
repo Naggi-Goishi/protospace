@@ -1,7 +1,11 @@
 class ProjectsController < ApplicationController
-
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_project, only: [:show, :destroy, :edit, :update]
   def index
     @projects = Project.all
+  end
+
+  def show
   end
 
   def new
@@ -10,23 +14,39 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    if current_user.projects.create(create_params).valid?
+    @project = Project.new(project_params)
+    if @project.save
       redirect_to :root
     else
-      valid_action
+      render :new
     end
+  end
+
+  def destroy
+    @project.destroy
+    redirect_to :root
+  end
+
+  def edit
+    unless current_user.id == @project.user_id
+      redirect_to :root
+    else
+    end
+  end
+
+  def update
+    @project.update(project_params)
+    redirect_to :root
   end
 
 private
 
-  def create_params
-    params.require(:project).permit(:title, :catch_copy, :concept, project_images_attributes: [:id, :image, :status])
+  def project_params
+    params.require(:project).permit(:title, :catch_copy, :concept, project_images_attributes: [:id, :image, :status]).merge(user_id: current_user.id)
   end
 
-  def valid_action
-    @project = Project.new(params.require(:project).permit(:title, :catch_copy, :concept))
-    @project.project_images.build
-    render action: :new
+  def set_project
+    @project = Project.find(params[:id])
   end
 
 end
