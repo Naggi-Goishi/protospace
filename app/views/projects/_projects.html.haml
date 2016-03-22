@@ -8,10 +8,10 @@
               %button.btn.btn-default.dropdown-toggle action
               %ul.dropdown-menu, aria: {labelledby: "dropdownMenu1"}
               %li
-                = link_to 'Delete', project_path(project.id), method: :delete
+                = link_to 'Delete', project_path(project), method: :delete
               %li
-                = link_to 'Edit', edit_project_path(project.id)
-          = link_to  project_path(project.id) do
+                = link_to 'Edit', edit_project_path(project)
+          = link_to project_path(project) do
             = image_tag(project.project_images.main.first.image)
           .caption
             %h3
