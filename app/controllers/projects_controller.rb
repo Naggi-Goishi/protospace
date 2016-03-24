@@ -6,6 +6,8 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @likes = Like.where(project_id: params[:id])
+    @like = Like.find_by(user_id: current_user.id)
   end
 
   def new
