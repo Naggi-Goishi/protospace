@@ -6,5 +6,6 @@ class User < ActiveRecord::Base
   mount_uploader :avator, AvatorUploader
   has_many :projects
   has_many :likes
+  has_many :comments
 
 end
