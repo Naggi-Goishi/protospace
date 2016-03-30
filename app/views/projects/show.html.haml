@@ -13,7 +13,7 @@
             %span.degree= @project.user.member + @project.user.job
     .col-md-6.text-right
     #like-buttons
-      = render partial: 'projects/like', locals: {project: @project, like: @like, likes: @likes}
+      = render partial: 'likes/like', locals: {project: @project, like: @like, likes: @likes}
   .row
     .col-md-9
       = image_tag(@project.project_images.main.first.image, class: 'img-responsive')
