@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
 
   def show
     @likes = Like.where(project_id: params[:id])
-    @like = Like.find_by(user_id: current_user.id)
+    @like = Like.find_by(user_id: current_user.id) if user_signed_in?
   end
 
   def new
