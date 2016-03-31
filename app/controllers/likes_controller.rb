@@ -3,7 +3,7 @@ class LikesController < ApplicationController
 before_action :set_likes_project, only: [:create, :destroy]
 
   def create
-    @like = current_user.likes.create(project_id: params[:project_id])
+    @like = current_user.likes.create(project_id: @project.id)
   end
 
   def destroy
