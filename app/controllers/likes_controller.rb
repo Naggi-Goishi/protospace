@@ -7,7 +7,7 @@ before_action :set_likes_project, only: [:create, :destroy]
   end
 
   def destroy
-    like = Like.find_by(user_id: current_user.id, project_id: params[:project_id])
+    like = current_user.likes.find_by(project_id: @project.id)
     like.destroy
   end
 
@@ -17,6 +17,5 @@ private
       @likes = Like.where(project_id: params[:project_id])
       @project = Project.find(params[:project_id])
   end
-
 
 end
