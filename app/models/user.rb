@@ -5,4 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   mount_uploader :avator, AvatorUploader
   has_many :projects
+  has_many :likes
+
 end
