@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
 
   def create
-    Comment.create(comment_params)
+    current_user.comments.create(comment_params)
     @comments = Comment.where(project_id: params[:comment][:project_id])
     @comment = Comment.new
   end
