@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :projects do
     resources :likes, only: [:create, :destroy]
   end
+  resources :comments, only: :create
 end
