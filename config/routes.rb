@@ -3,5 +3,6 @@ Rails.application.routes.draw do
   root 'projects#index'
   resources :projects do
     resources :likes, only: [:create, :destroy]
+    resources :comments, only: :create
   end
 end

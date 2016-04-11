@@ -8,6 +8,9 @@ class ProjectsController < ApplicationController
   def show
     @likes = Like.where(project_id: params[:id])
     @like = Like.find_by(user_id: current_user.id) if user_signed_in?
+    @comments = Comment.where(project_id: params[:id])
+    @comment = Comment.new
+    @comment.project_id = params[:id]
   end
 
   def new
