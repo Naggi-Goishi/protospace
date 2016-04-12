@@ -52,4 +52,4 @@ end
 gem "devise"
 gem 'bootstrap-sass'
 gem 'carrierwave'
-
+gem 'acts-as-taggable-on'
