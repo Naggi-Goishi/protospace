@@ -5,7 +5,7 @@ class TagsController < ApplicationController
   end
 
   def show
-    @projects = Project.tagged_with(params[:not_id])
+    @projects = Project.tagged_with(params[:tag_name])
     render template: 'projects/index'
   end
 

@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :likes, only: [:create, :destroy]
     resources :comments, only: :create
   end
-  resources :tags, only: [:index, :show], param: 'not_id'
+  resources :tags, only: [:index, :show], param: 'tag_name'
 end
 
