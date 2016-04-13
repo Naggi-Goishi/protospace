@@ -594,3 +594,14 @@ body {
     }
   }
 }
+
+.tags_list ul{
+  list-style: none;
+}
+
+.tags_list a{
+  width:  360px;
+  height: 56px;
+  text-align: left;
+  padding: 20px;
+}
