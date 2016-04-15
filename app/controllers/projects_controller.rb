@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
   end
 
   def newest
-    @projects = Project.page(params[:page]).order("updated_at DESC")
+    @projects = Project.page(params[:page]).per(8).order("updated_at DESC")
     gon.type = "newest"
     render template: 'projects/index'
   end
