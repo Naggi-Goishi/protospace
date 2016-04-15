@@ -1,6 +1,6 @@
-- @projects.each do |project|
-  .container.proto-list
-    .row
+.container.proto-list
+  .row
+    - @projects.each do |project|
       .col-sm-4.col-md-3.proto-content
         .thumbnail
           .dropdown.drop_menu_location
@@ -25,3 +25,6 @@
             - project.tags.each do |tag|
               %li
                 = link_to tag.name, tag_path(tag.name), class: "btn btn-default"
+
+.text-center
+  = paginate(@projects)
