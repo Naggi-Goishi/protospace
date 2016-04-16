@@ -2,13 +2,7 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_project, only: [:show, :destroy, :edit, :update]
   def index
-    project_ids = Like.group(:project_id).order('count_project_id DESC').count(:project_id).keys
-    projects_rest = Project.all
-    projects_rest.each do |rest|
-      project_ids << rest.id
-    end
-    @projects = project_ids.uniq.map { |id| Project.find(id) }
-    @projects = Kaminari.paginate_array(@projects).page(params[:page]).per(8)
+    @projects = Project.page(params[:page]).per('8').order('likes_count DESC')
     gon.type = "popular"
   end
 
@@ -51,11 +45,6 @@ class ProjectsController < ApplicationController
     redirect_to :root
   end
 
-  def newest
-    @projects = Project.page(params[:page]).per(8).order("updated_at DESC")
-    gon.type = "newest"
-    render template: 'projects/index'
-  end
 
 private
 
