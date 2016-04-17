@@ -12,4 +12,6 @@
           = link_to "Newest PROTO", newest_index_path
       = link_to "View Tags", tags_path, class: "btn btn-default col-lg-1"
 
-= render partial: "projects/projects", locals: {project: @projects}
+.container.proto-list
+  .row
+    = render @projects
