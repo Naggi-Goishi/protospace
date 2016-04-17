@@ -4,9 +4,9 @@
       = image_tag("icon_heart_red.svg")
       Like
       %span.num
-        = likes_counter(likes)
+        = project.likes_count
   -else
     = button_to project_likes_path(project), class: "btn btn-default", method: :post, remote: true do
       = image_tag("icon_heart.svg")
       Like
-      %span.num= likes_counter(likes)
+      %span.num= project.likes_count
