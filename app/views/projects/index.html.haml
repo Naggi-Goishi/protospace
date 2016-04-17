@@ -6,32 +6,12 @@
   .container
     .row
       %ul.nav.nav-pills.col-lg-11
-        %li.active{role: "presentation"}
-          = link_to "Popular PROTO", '#'
-        %li{role: "presentation"}
-          = link_to "Newest PROTO", '#'
+        %li.active#list_popular{role: "presentation"}
+          = link_to "Popular PROTO", root_path
+        %li#list_newest{role: "presentation"}
+          = link_to "Newest PROTO", newest_index_path
       = link_to "View Tags", tags_path, class: "btn btn-default col-lg-1"
 
-= render partial: "projects/projects", locals: {project: @project}
-
-.text-center
-  %ul.pagination
-    %li.disabled
-      = link_to '#', aria: {label: "Previous"} do
-        %span{"aria-hidden" => "true"} «
-    %li.active
-      = link_to '#' do
-        1
-        %span.sr-only (current)
-    %li
-      = link_to "2", '#'
-    %li
-      = link_to "3", '#'
-    %li
-      = link_to "4", '#'
-    %li
-      = link_to "5", '#'
-    %li
-      = link_to '#', aria: {label: "Next"} do
-        %span{"aria-hidden" => "true"} »
-
+.container.proto-list
+  .row
+    = render @projects

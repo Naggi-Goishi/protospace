@@ -2,7 +2,8 @@ class ProjectsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   before_action :set_project, only: [:show, :destroy, :edit, :update]
   def index
-    @projects = Project.all
+    @projects = Project.page(params[:page]).per(8).order(likes_count: :DESC)
+    gon.type = "popular"
   end
 
   def show
@@ -43,6 +44,7 @@ class ProjectsController < ApplicationController
     @project.update(project_params)
     redirect_to :root
   end
+
 
 private
 
