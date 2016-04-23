@@ -51,6 +51,9 @@ $(document).on("change", "#project_project_images_attributes_2_image", function(
     show_image("#image_box2", this);
 });
 
+$(document).on("change", "#project_project_images_attributes_3_image", function() {
+    show_image("#image_box3", this);
+});
 
 jQuery(function(){
     $('.image-upload-plus').on('click',function(){
