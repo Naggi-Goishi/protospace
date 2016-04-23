@@ -53,11 +53,8 @@ $(document).on("change", "#project_project_images_attributes_2_image", function(
 
 
 jQuery(function(){
-
-$('.image-upload-plus').on('click',function(){
-    $("#new_image").hide();
-    $(".hide_form").removeClass("hide_form");
-});
-
-
+    $('.image-upload-plus').on('click',function(){
+        $("#add_new_form").hide();
+        $(".hide_form").removeClass("hide_form");
+    });
 });
