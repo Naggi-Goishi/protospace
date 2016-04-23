@@ -23,8 +23,9 @@
           = image_tag(@project.project_images.sub.first.image, class: 'img-responsive')
         %li.list-group-item
           = image_tag(@project.project_images.sub.second.image, class: 'img-responsive')
-        %li.list-group-item
-          = image_tag("sample.png", class: 'img-responsive')
+        - if @project.project_images.sub.third.presence
+          %li.list-group-item
+            = image_tag(@project.project_images.sub.third.image, class: 'img-responsive')
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
