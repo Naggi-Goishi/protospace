@@ -24,38 +24,41 @@ function show_image(image_id, this_file){
 }
 
 $(document).on("change", "#project_project_images_attributes_0__image", function() {
-    show_image("#image_box0", this)
+    show_image("#image_box0", this);
 });
 
 $(document).on("change", "#project_project_images_attributes_1__image", function() {
-    show_image("#image_box1", this)
+    show_image("#image_box1", this);
 });
 
 $(document).on("change", "#project_project_images_attributes_2__image", function() {
-    show_image("#image_box2", this)
+    show_image("#image_box2", this);
 });
 
 $(document).on("change", "#project_project_images_attributes_3__image", function() {
-    show_image("#image_box3", this)
+    show_image("#image_box3", this);
 });
 
-
 $(document).on("change", "#project_project_images_attributes_0_image", function() {
-    show_image("#image_box0", this)
+    show_image("#image_box0", this);
 });
 
 $(document).on("change", "#project_project_images_attributes_1_image", function() {
-    show_image("#image_box1", this)
+    show_image("#image_box1", this);
 });
 
 
 $(document).on("change", "#project_project_images_attributes_2_image", function() {
-    show_image("#image_box2", this)
+    show_image("#image_box2", this);
 });
 
-$('#new_image').on('click',function(){
-    console.log("hello");
-    $(".image-upload-plus").addClass("hide_form");
-    $(".list-group-item.col-md-4.hide_form").removeClass("hide_form");
+
+jQuery(function(){
+
+$('.image-upload-plus').on('click',function(){
+    $("#new_image").hide();
+    $(".hide_form").removeClass("hide_form");
 });
 
+
+});
