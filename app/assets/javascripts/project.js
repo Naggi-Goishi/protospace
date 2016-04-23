@@ -15,7 +15,6 @@ function show_image(image_id, this_file){
     // 画像がロードされてから処理を行う
     reader.onload = function (e) {
         // readAsDataURLをsrcに指定してイメージを作成
-        console.log("hello")
         $(image_id).html("<img src='"+e.target.result+"'/>");
     }
 
