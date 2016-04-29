@@ -10,31 +10,31 @@
         = f.text_area :title, placeholder: "Title", class: "proto-new-title"
       .row
         .col-md-12
-          = f.fields_for 'project_images_attributes[0]' do |i|
+          = f.fields_for 'project_images_attributes[1]' do |i|
             .cover-image-upload
               = i.file_field :image
               = i.hidden_field :status, value: "main"
-              #image_box0
+              #image_box1
         .col-md-12
           %ul.proto-sub-list.list-group
             %li.list-group-item.col-md-4
-              = f.fields_for 'project_images_attributes[1]' do |i|
-                .image-upload#sub_image_0
-                  = i.file_field :image
-                  = i.hidden_field :status, value: "sub"
-                  #image_box1
-            %li.list-group-item.col-md-4
-              = f.fields_for 'project_images_attributes[2]'  do |i|
-                .image-upload#sub_image_1
-                  = i.file_field :image
-                  = i.hidden_field :status, value: "sub"
-                  #image_box2
-            %li.list-group-item.col-md-4.hide_form
-              = f.fields_for 'project_images_attributes[3]'  do |i|
+              = f.fields_for 'project_images_attributes[2]' do |i|
                 .image-upload#sub_image_2
                   = i.file_field :image
                   = i.hidden_field :status, value: "sub"
+                  #image_box2
+            %li.list-group-item.col-md-4
+              = f.fields_for 'project_images_attributes[3]'  do |i|
+                .image-upload#sub_image_3
+                  = i.file_field :image
+                  = i.hidden_field :status, value: "sub"
                   #image_box3
+            %li.list-group-item.col-md-4.last#hide_form
+              = f.fields_for 'project_images_attributes[4]'  do |i|
+                .image-upload#sub_image_4
+                  = i.file_field :image
+                  = i.hidden_field :status, value: "sub"
+                  #image_box4
             %li.list-group-item.col-md-4#add_new_form
               .image-upload-plus
                 %span +
