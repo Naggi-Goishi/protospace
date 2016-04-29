@@ -19,7 +19,7 @@
       = image_tag(@project.project_images.main.first.image, class: 'img-responsive')
     .col-md-3
       %ul.proto-sub-list.list-group
-        = render 'projects/project_image', collections: @project
+        = render partial: 'projects/project_image', collection: @project.project_images.sub, as: "sub"
   .row.proto-description
     .col-md-3
       %h4 Catch Copy
