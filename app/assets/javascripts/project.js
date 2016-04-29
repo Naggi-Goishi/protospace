@@ -20,11 +20,8 @@ function show_image(image_id, this_file){
 
     // readAsDataURLメソッドでファイルの内容を取得
     reader.readAsDataURL(file[0]);
-}
 
-$(document).on("change", "#project_project_images_attributes_0__image", function() {
-    show_image("#image_box0", this);
-});
+};
 
 $(document).on("change", "#project_project_images_attributes_1__image", function() {
     show_image("#image_box1", this);
@@ -38,14 +35,13 @@ $(document).on("change", "#project_project_images_attributes_3__image", function
     show_image("#image_box3", this);
 });
 
-$(document).on("change", "#project_project_images_attributes_0_image", function() {
-    show_image("#image_box0", this);
+$(document).on("change", "#project_project_images_attributes_4__image", function() {
+    show_image("#image_box4", this);
 });
 
 $(document).on("change", "#project_project_images_attributes_1_image", function() {
     show_image("#image_box1", this);
 });
-
 
 $(document).on("change", "#project_project_images_attributes_2_image", function() {
     show_image("#image_box2", this);
@@ -55,9 +51,18 @@ $(document).on("change", "#project_project_images_attributes_3_image", function(
     show_image("#image_box3", this);
 });
 
-jQuery(function(){
+$(document).on("change", "#project_project_images_attributes_4_image", function() {
+    show_image("#image_box4", this);
+});
+
+$(function(){
     $('.image-upload-plus').on('click',function(){
-        $("#add_new_form").hide();
-        $(".hide_form").removeClass("hide_form");
+        if($("#hide_form").hasClass("last")){
+            $("#add_new_form").hide();
+            $("#hide_form").attr('id', "appear_form");
+        }
+        else{
+            $("#hide_form").attr('id', "appear_form");
+        }
     });
 });
