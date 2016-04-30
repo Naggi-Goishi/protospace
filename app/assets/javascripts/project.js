@@ -65,4 +65,5 @@ $(function(){
             $("#hide_form").attr('id', "appear_form");
         }
     });
+    $('.list-group-item.col-md-4:has(img)').attr('id', "appear_form");
 });

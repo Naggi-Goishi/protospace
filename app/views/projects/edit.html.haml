@@ -18,57 +18,31 @@
                 = image_tag(@project.project_images.main.first.image)
         .col-md-12
           %ul.proto-sub-list.list-group
-            -if @project.project_images.sub.first
-              %li.list-group-item.col-md-4
-                = f.fields_for "project_images_attributes[2]"  do |i|
-                  .image-upload#sub_image_2
-                    = i.file_field :image
-                    = i.hidden_field :status, value: "sub"
-                    #image_box2
-                      = image_tag(@project.project_images.sub.first.image)
-            -else
-              %li.list-group-item.col-md-4#hide_form
-                = f.fields_for "project_images_attributes[2]"  do |i|
-                  .image-upload#sub_image_2
-                    = i.file_field :image
-                    = i.hidden_field :status, value: "sub"
-                    #image_box2
-                      -if @project.project_images.sub.first
-                        = image_tag(@project.project_images.sub.first.image)
-            -if @project.project_images.sub.second
-              %li.list-group-item.col-md-4
-                = f.fields_for "project_images_attributes[3]"  do |i|
-                  .image-upload#sub_image_3
-                    = i.file_field :image
-                    = i.hidden_field :status, value: "sub"
-                    #image_box3
-                      = image_tag(@project.project_images.sub.second.image)
-            -else
-              %li.list-group-item.col-md-4#hide_form
-                = f.fields_for "project_images_attributes[3]"  do |i|
-                  .image-upload#sub_image_3
-                    = i.file_field :image
-                    = i.hidden_field :status, value: "sub"
-                    #image_box3
-            -if @project.project_images.sub.third
-              %li.list-group-item.col-md-4.last
-                = f.fields_for "project_images_attributes[4]"  do |i|
-                  .image-upload#sub_image_4
-                    = i.file_field :image
-                    = i.hidden_field :status, value: "sub"
-                    #image_box4
-                      = image_tag(@project.project_images.sub.third.image)
-            -else
-              %li.list-group-item.col-md-4.last#hide_form
-                = f.fields_for "project_images_attributes[4]"  do |i|
-                  .image-upload#sub_image_4
-                    = i.file_field :image
-                    = i.hidden_field :status, value: "sub"
-                    #image_box4
-            - unless @project.project_images.sub.third
-              %li.list-group-item.col-md-4#add_new_form
-                .image-upload-plus
-                  %span +
+            %li.list-group-item.col-md-4#hide_form
+              = f.fields_for "project_images_attributes[2]"  do |i|
+                .image-upload#sub_image_2
+                  = i.file_field :image
+                  = i.hidden_field :status, value: "sub"
+                  #image_box2
+                    = image_tag(@project.project_images.sub.first.image)
+            %li.list-group-item.col-md-4#hide_form
+              = f.fields_for "project_images_attributes[3]"  do |i|
+                .image-upload#sub_image_3
+                  = i.file_field :image
+                  = i.hidden_field :status, value: "sub"
+                  #image_box3
+                    = image_tag(@project.project_images.sub.second.image)
+            %li.list-group-item.col-md-4.last#hide_form
+              = f.fields_for "project_images_attributes[4]"  do |i|
+                .image-upload#sub_image_4
+                  = i.file_field :image
+                  = i.hidden_field :status, value: "sub"
+                  #image_box4
+                    = image_tag(@project.project_images.third.image)
+          - unless @project.project_images.sub.third
+            %li.list-group-item.col-md-4#add_new_form
+              .image-upload-plus
+                %span +
     .row.proto-description
       .col-md-12
         = f.text_area :catch_copy, placeholder: "Catch Copy"
