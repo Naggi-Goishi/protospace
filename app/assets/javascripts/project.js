@@ -22,8 +22,7 @@ function show_image(image_id, this_file){
 
 };
 
-
-$(function(){
+function pre_show_image(){
     $('.image-upload, .cover-image-upload').on('click', function(){
         var input = $(this).children('input:first').attr("id")
         var image_box = $(this).children('div').attr("id")
@@ -31,6 +30,11 @@ $(function(){
             show_image("#"+image_box, this);
         });
     });
+}
+
+
+$(function(){
+    pre_show_image()
     $('.list-group-item.col-md-4:has(img)').attr('id', "appear_form");
     $('.image-upload-plus').on('click',function(){
         if($("#hide_form").hasClass("last")){
