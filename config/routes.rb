@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   end
   resources :newest, only: :index
   resources :tags, only: [:index, :show], param: 'tag_name'
+  resources :users, only: :show
 end
 
