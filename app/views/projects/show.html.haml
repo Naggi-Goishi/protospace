@@ -19,12 +19,7 @@
       = image_tag(@project.project_images.main.first.image, class: 'img-responsive')
     .col-md-3
       %ul.proto-sub-list.list-group
-        %li.list-group-item
-          = image_tag(@project.project_images.sub.first.image, class: 'img-responsive')
-        %li.list-group-item
-          = image_tag(@project.project_images.sub.second.image, class: 'img-responsive')
-        %li.list-group-item
-          = image_tag("sample.png", class: 'img-responsive')
+        = render partial: 'projects/project_image', collection: @project.project_images.sub, as: "sub"
   .row.proto-description
     .col-md-3
       %h4 Catch Copy

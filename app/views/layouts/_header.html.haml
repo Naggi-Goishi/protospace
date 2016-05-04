@@ -25,4 +25,4 @@
                 = link_to "Logout", destroy_user_session_path, method: :Delete
           %li
             .btn.btn-primary.navbar-btn
-              = link_to "New Proto", new_project_path
+              = link_to "New Proto", new_project_path, data: { no_turbolink: true }

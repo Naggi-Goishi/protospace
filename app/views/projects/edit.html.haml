@@ -14,21 +14,38 @@
             .cover-image-upload
               = i.file_field :image
               = i.hidden_field :status, value: "main"
+              #image_box0
+                = image_tag(@project.project_images.main.first.image)
         .col-md-12
           %ul.proto-sub-list.list-group
-            %li.list-group-item.col-md-4
-              = f.fields_for :project_images, @project.project_images.sub.first do |i|
-                .image-upload
+            %li.list-group-item.col-md-4#hide_form
+              = f.fields_for :project_images, @project.project_images.sub.first  do |i|
+                .image-upload#sub_image_2
                   = i.file_field :image
                   = i.hidden_field :status, value: "sub"
-            %li.list-group-item.col-md-4
+                  #image_box2
+                    - if @project.project_images.sub.first
+                      = image_tag(@project.project_images.sub.first.image)
+            %li.list-group-item.col-md-4#hide_form
               = f.fields_for :project_images, @project.project_images.sub.second  do |i|
-                .image-upload
+                .image-upload#sub_image_3
                   = i.file_field :image
                   = i.hidden_field :status, value: "sub"
-          %li.list-group-item.col-md-4
-            .image-upload-plus
-              %span +
+                  #image_box3
+                    - if @project.project_images.sub.second
+                      = image_tag(@project.project_images.sub.second.image)
+            %li.list-group-item.col-md-4.last#hide_form
+              = f.fields_for :project_images, @project.project_images.sub.second  do |i|
+                .image-upload#sub_image_4
+                  = i.file_field :image
+                  = i.hidden_field :status, value: "sub"
+                  #image_box4
+                    - if @project.project_images.sub.third
+                      = image_tag(@project.project_images.sub.third.image)
+            - unless @project.project_images.sub.third
+              %li.list-group-item.col-md-4#add_new_form
+                .image-upload-plus
+                  %span +
     .row.proto-description
       .col-md-12
         = f.text_area :catch_copy, placeholder: "Catch Copy"

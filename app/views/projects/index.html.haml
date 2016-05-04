@@ -9,7 +9,7 @@
         %li.active#list_popular{role: "presentation"}
           = link_to "Popular PROTO", root_path
         %li#list_newest{role: "presentation"}
-          = link_to "Newest PROTO", newest_index_path
+          = link_to "Newest PROTO", newest_index_path, data: { no_turbolink: true }
       = link_to "View Tags", tags_path, class: "btn btn-default col-lg-1"
 
 .container.proto-list
