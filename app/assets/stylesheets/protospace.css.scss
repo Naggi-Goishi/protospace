@@ -621,3 +621,26 @@ body {
   height: 100%;
   width: 100%;
 }
+
+#hide_box {
+  display: none;
+}
+.dropdown-toggle, #appear_box{
+  position: absolute;
+  z-index: 10;
+}
+.project_image{
+  position: relative;
+}
+#appear_box{
+  width: 100px;
+  font-size: 15px;
+  margin-top: 30px;
+  border-radius: 10px;
+  list-style: none;
+  background-color: white;
+  li a{
+    margin-left: 5px;
+    color: black;
+  }
+}
