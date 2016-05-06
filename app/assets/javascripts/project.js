@@ -45,4 +45,10 @@ $(function(){
             $("#hide_form").attr('id', "appear_form");
         }
     });
+    $(".dropdown").on("click", function(){
+        var hide_box = $(this).children("#hide_box")
+        var appear_box = $(this).children("#appear_box")
+        $(hide_box).attr('id', "appear_box");
+        $(appear_box).attr('id', "hide_box");
+    })
 });

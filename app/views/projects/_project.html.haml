@@ -3,13 +3,14 @@
     .dropdown.drop_menu_location
       - if user_signed_in? && current_user.id == project.user_id
         %button.btn.btn-default.dropdown-toggle action
-        %ul.dropdown-menu, aria: {labelledby: "dropdownMenu1"}
-        %li
-          = link_to 'Delete', project_path(project), method: :delete
-        %li
-          = link_to 'Edit', edit_project_path(project), data: { no_turbolink: true }
+        #hide_box
+          %ul.dropdown-menu, aria: {labelledby: "dropdownMenu1"}
+          %li
+            = link_to 'Delete', project_path(project), method: :delete
+          %li
+            = link_to 'Edit', edit_project_path(project), data: { no_turbolink: true }
     = link_to project_path(project) do
-      = image_tag(project.project_images.main.first.image)
+      = image_tag(project.project_images.main.first.image, class: "project_image")
     .caption
       %h3
         = project.title
